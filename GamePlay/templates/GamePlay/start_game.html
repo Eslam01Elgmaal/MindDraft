@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hidden Player</title>
+</head>
+<body>
+
+    <h1>Hidden Player</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Player One Name</label>
+        <br>
+        <input type="text" name="player_one_name">
+        <br><br>
+
+        <label>Player Two Name</label>
+        <br>
+        <input type="text" name="player_two_name">
+        <br><br>
+
+        <label>Game Mode</label>
+        <br>
+
+        <input type="radio" name="game_mode" value="S">
+        <label>Single</label>
+
+        <input type="radio" name="game_mode" value="L">
+        <label>Local</label>
+
+        <br><br>
+
+        <button type="submit">Start Game</button>
+
+    </form>
+
+</body>
+</html>
