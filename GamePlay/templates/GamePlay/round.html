@@ -1,0 +1,49 @@
+<form method="POST">
+
+    {% csrf_token %}
+    <h2>Round {{ game.picks.count|add:1 }} / 11</h2>
+
+    <h3>Current Turn: {{ current_player }}</h3>
+
+    <h3>Position: {{ position }}</h3>
+
+
+
+    <h2>{{ visible_player.name }}</h2>
+
+    <hr>
+
+    <h2>Hidden Player (Debug)</h2>
+    <p>{{ hidden_player.name }}</p>
+
+
+
+    <input
+        type="hidden"
+        name="visible_player_id"
+        value="{{ visible_player.id }}">
+
+    <input
+        type="hidden"
+        name="hidden_player_id"
+        value="{{ hidden_player.id }}">
+
+    <button
+        type="submit"
+        name="choice"
+        value="visible">
+
+        Pick Visible
+
+    </button>
+
+    <button
+        type="submit"
+        name="choice"
+        value="hidden">
+
+        Pick Hidden
+
+    </button>
+
+</form>

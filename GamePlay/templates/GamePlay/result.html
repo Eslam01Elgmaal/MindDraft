@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Result</title>
+</head>
+<body>
+
+    <h1>Game Result</h1>
+
+    <hr>
+
+    <h2>{{ game.player_one_name }}</h2>
+
+    <ul>
+        {% for player in player_one_team %}
+            <li>{{ player.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>{{ game.player_two_name }}</h2>
+
+    <ul>
+        {% for player in player_two_team %}
+            <li>{{ player.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <a href="{% url 'start_game' %}">
+        <button>Play Again</button>
+    </a>
+
+</body>
+</html>
